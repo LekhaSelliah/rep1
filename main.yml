@@ -9,14 +9,9 @@ jobs:
            runs-on: ubuntu-latest
 
            steps:
-             - name: checkout code
                uses: actions/checkout@v2
 
-             - name: deploy app to tomcat
-               env:
-                  TOMCAT_URL: "https://localhost:8080"
-                  TOMCAT_USER: "admin"
-                  TOMCAT_PASSWORD: "admin"
-
-               run:
-                echo "App deployed"
+             - name: Docker work item title
+              run:
+                echo "Hello world" > web.html
+                python -m http.server 8080
